@@ -1,0 +1,83 @@
+{
+  "name": "svelte-hilight-blocks",
+  "displayName": "Svelte Hilight Blocks",
+  "description": "hilight Svelte script and style blocks with customizable background colors",
+  "version": "0.1.0",
+  "publisher": "Robert Silvis",
+  "license": "GPL-3.0-only",
+  "engines": {
+    "vscode": "^1.146.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": ["onLanguage:svelte"],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Svelte Hilight Blocks",
+      "properties": {
+        "svelteHilightBlocks.instanceScriptBackground": {
+          "type": "string",
+          "default": "#000080",
+          "description": "Background color for instance <script> blocks in Svelte files."
+        },
+        "svelteHilightBlocks.moduleScriptBackground": {
+          "type": "string",
+          "default": "#000080",
+          "description": "Background color for module <script> blocks in Svelte files."
+        },
+        "svelteHilightBlocks.styleBackground": {
+          "type": "string",
+          "default": "#000080",
+          "description": "Background color for <style> blocks in Svelte files."
+        },
+        "svelteHilightBlocks.backgroundOpacity": {
+          "type": "number",
+          "default": 0.125,
+          "description": "Background color for HTML code in Svelte files."
+        },
+        "svelteHilightBlocks.overviewLaneOpacity": {
+          "type": "number",
+          "default": 0.65,
+          "description": "Background color for HTML code in Svelte files."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "@types/vscode": "^1.146.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0",
+    "@vscode/vsce": "^4.1.1",
+    "esbuild": "^0.28.1",
+    "eslint": "^10.5.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  },
+  "dependencies": {
+    "@hueycolor/core": "^1.0.1",
+    "svelte": "^5.57.3"
+  }
+}
