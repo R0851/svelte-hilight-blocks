@@ -1,71 +1,36 @@
-# svelte-hilight-blocks README
+# Svelte Hilight Blocks
 
-This is the README for your extension "svelte-hilight-blocks". After writing up a brief description, we recommend including the following sections.
+Highlights `<script>`, `<script module>`, and `<style>` blocks in `.svelte` files
+ - customizable background colors
+ - supports OKLCH, hex, RGB, and HSL color strings via `@hueycolor/core`
+
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+* **Distinct Block Highlighting:** Automatically applies customizable full-width background tints to `<script>`, `<script module>`, and `<style>` blocks in `.svelte` files, leaving HTML markup untouched so component sections are easy to distinguish at a glance.
 
-For example if there is an image subfolder under your extension project workspace:
+* **Modern Color Support (OKLCH & More):** Powered by [hueycolor](https://hueycolor.pages.dev/), settings accept `oklch(...)` strings alongside standard hex, RGB, and HSL formats, converting them into VS Code-compatible colors with safe fallbacks while editing.
 
-\!\[feature X\]\(images/feature-x.png\)
+* **Preserves Active Cursor Line Highlights:** Dynamically excludes any line containing a cursor or active selection (including multi-cursor edits) before rendering block decorations, ensuring VS Code's `editor.lineHighlightBackground` remains completely unobstructed on the lines you are editing.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+* **Non-Intrusive Visual Indicators:** Uses clean whole-line background shading and overview ruler scrollbar markers.
 
-## Requirements
+* **Accurate Svelte AST Parsing with Version Caching:** Uses `svelte/compiler` to locate exact block boundaries rather than fragile regular expressions, avoiding false matches inside comments or strings. Parsed ranges are cached per document in a `WeakMap` keyed to `document.version`, so moving the cursor around reuses cached ranges without re-parsing the file until the text actually changes.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
 
-## Extension Settings
+## Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+* `svelteHilightBlocks.instanceScriptBackground`:  
+  background color for instance `<script>` blocks in Svelte files
 
-For example:
+* `svelteHilightBlocks.moduleScriptBackground`:  
+  background color for module `<script>` blocks in Svelte files
 
-This extension contributes the following settings:
+* `svelteHilightBlocks.styleBackground`:  
+  background color for `<style>` blocks in Svelte files
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+* `svelteHilightBlocks.backgroundOpacity`:  
+  background opacity for affected blocks
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+* `svelteHilightBlocks.overviewLaneOpacity`:  
+  opacity of the overview lane marker

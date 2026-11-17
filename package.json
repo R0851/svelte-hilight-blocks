@@ -3,13 +3,25 @@
   "displayName": "Svelte Hilight Blocks",
   "description": "hilight Svelte script and style blocks with customizable background colors",
   "version": "0.1.0",
-  "publisher": "Robert Silvis",
+  "publisher": "r0851",
+  "homepage": "https://github.com/r0851/svelte-hilight-blocks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/r0851/svelte-hilight-blocks.git"
+  },
   "license": "GPL-3.0-only",
   "engines": {
     "vscode": "^1.146.0"
   },
+  "icon": "icon.png",
+  "galleryBanner": {"color": "#141416", "theme": "dark"},
+  "pricing": "Free",
+  "sponsor": {"url": "https://ko-fi.com/r0851"},
   "categories": [
-    "Other"
+    "Programming Languages", "Visualization"
+  ],
+  "keywords": [
+    "svelte", "highlight", "background", "oklch", "color", "highlighter"
   ],
   "activationEvents": ["onLanguage:svelte"],
   "main": "./dist/extension.js",
@@ -20,27 +32,27 @@
         "svelteHilightBlocks.instanceScriptBackground": {
           "type": "string",
           "default": "#000080",
-          "description": "Background color for instance <script> blocks in Svelte files."
+          "description": "background color for instance <script> blocks in Svelte files"
         },
         "svelteHilightBlocks.moduleScriptBackground": {
           "type": "string",
           "default": "#000080",
-          "description": "Background color for module <script> blocks in Svelte files."
+          "description": "background color for module <script> blocks in Svelte files"
         },
         "svelteHilightBlocks.styleBackground": {
           "type": "string",
           "default": "#000080",
-          "description": "Background color for <style> blocks in Svelte files."
+          "description": "background color for <style> blocks in Svelte files"
         },
         "svelteHilightBlocks.backgroundOpacity": {
           "type": "number",
           "default": 0.125,
-          "description": "Background color for HTML code in Svelte files."
+          "description": "background opacity for affected blocks"
         },
         "svelteHilightBlocks.overviewLaneOpacity": {
           "type": "number",
           "default": 0.65,
-          "description": "Background color for HTML code in Svelte files."
+          "description": "opacity of the overview lane marker"
         }
       }
     }

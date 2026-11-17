@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <clipPath id="window-clip">
+      <rect x="4" y="4" width="120" height="120" rx="18" />
+    </clipPath>
+  </defs>
+
+  <!-- Outer Dark Editor Background -->
+  <rect x="4" y="4" width="120" height="120" rx="18" fill="#141416" stroke="#2d2d32" stroke-width="2" />
+
+  <g clip-path="url(#window-clip)">
+    <!-- Subtle Top Window Bar -->
+    <rect x="4" y="4" width="120" height="14" fill="#1d1d21" />
+    <circle cx="15" cy="11" r="2.2" fill="#ff5f56" />
+    <circle cx="22" cy="11" r="2.2" fill="#ffbd2e" />
+    <circle cx="29" cy="11" r="2.2" fill="#27c93f" />
+
+    <!-- GREEN HIGHLIGHT: <script> block (Lines 1-3) -->
+    <rect x="4" y="21" width="120" height="33" fill="#22c55e" fill-opacity="0.24" />
+    <rect x="121" y="21" width="3" height="33" fill="#4ade80" />
+
+    <!-- BLUE HIGHLIGHT: <style> block (Lines 6-8) -->
+    <rect x="4" y="83" width="120" height="33" fill="#3b82f6" fill-opacity="0.26" />
+    <rect x="121" y="83" width="3" height="33" fill="#60a5fa" />
+
+    <!-- Line Numbers Gutter -->
+    <g fill="#6e7681" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="end">
+      <text x="17" y="30">1</text>
+      <text x="17" y="40">2</text>
+      <text x="17" y="50">3</text>
+      <text x="17" y="64">4</text>
+      <text x="17" y="74">5</text>
+      <text x="17" y="92">6</text>
+      <text x="17" y="102">7</text>
+      <text x="17" y="112">8</text>
+    </g>
+
+    <!-- Svelte Hello World Code (Crisp Vector Syntax Bars & Text) -->
+    <g font-family="monospace" font-size="7.5" font-weight="bold">
+      <!-- Line 1: <script> -->
+      <text x="23" y="30" fill="#86efac">&lt;script&gt;</text>
+      <!-- Line 2: let name = 'world'; -->
+      <text x="28" y="40" fill="#c084fc">let</text>
+      <text x="44" y="40" fill="#e2e8f0">name =</text>
+      <text x="74" y="40" fill="#fde047">'world'</text>
+      <!-- Line 3: </script> -->
+      <text x="23" y="50" fill="#86efac">&lt;/script&gt;</text>
+
+      <!-- Line 4-5: <h1>Hello {name}!</h1> -->
+      <text x="23" y="64" fill="#fb923c">&lt;h1&gt;</text>
+      <text x="41" y="64" fill="#f8fafc">Hello {name}!</text>
+      <text x="23" y="74" fill="#fb923c">&lt;/h1&gt;</text>
+
+      <!-- Line 6: <style> -->
+      <text x="23" y="92" fill="#93c5fd">&lt;style&gt;</text>
+      <!-- Line 7: h1 { color: #ff3e00; } -->
+      <text x="28" y="102" fill="#f472b6">h1</text>
+      <text x="40" y="102" fill="#e2e8f0">{ color:</text>
+      <text x="78" y="102" fill="#fb923c">#ff3e00</text>
+      <text x="111" y="102" fill="#e2e8f0">}</text>
+      <!-- Line 8: </style> -->
+      <text x="23" y="112" fill="#93c5fd">&lt;/style&gt;</text>
+    </g>
+  </g>
+</svg>
