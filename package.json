@@ -2,7 +2,7 @@
   "name": "svelte-hilight-blocks",
   "displayName": "Svelte Hilight Blocks",
   "description": "hilight Svelte script and style blocks with customizable background colors",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "r0851",
   "homepage": "https://github.com/r0851/svelte-hilight-blocks",
   "repository": {
